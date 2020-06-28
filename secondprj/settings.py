@@ -20,13 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 #실제로 런칭할때는 숨겨야함 배포전에 secret_key /debug/allowed_hosts
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY=os.environ.get('DJANGO_SECRET_KEY','17t5zt&crv_e1g^__t-knt@ca3j6!7uci@&!s)r*u!qxf$76f^')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '17t5zt&crv_e1g^__t-knt@ca3j6!7uci@&!s)r*u!qxf$76f^')
 #SECRET_KEY = '17t5zt&crv_e1g^__t-knt@ca3j6!7uci@&!s)r*u!qxf$76f^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG=bool(os.environ.get('DJANGO_DEBUG', True))
-ALLOWED_HOSTS=['*']
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
+ALLOWED_HOSTS = ['*']
 #ALLOWED_HOSTS = []
 
 
@@ -124,7 +124,6 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
-#Heroku 배포를 위한 추가
 
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
